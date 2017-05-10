@@ -1,0 +1,107 @@
+h1 {
+	text-align: center;
+	font-family: arial;
+	font-size: 35px;
+}
+
+h2 {
+	text-align: center;
+	font-family: arial;
+	font-size: 20px;
+}
+
+p {
+	font-family: arial;
+	font-size: 20px;
+}
+
+#home-world-city {
+	text-align: center;
+	font-family: arial;
+	font-size: 40px;
+	margin-left: 300px;
+	border-style: double;
+	width: 350px;
+	height: 304px;
+	text-align: center;
+	font-weight: bold;
+	padding-bottom: 50px;
+	clear: both;
+	position: relative;
+}
+
+.home-picture {
+	margin-left: 300px;
+	width: 350px;
+	text-align: center;
+	font-weight: bold;
+	padding-bottom: 237px;
+	clear: both;
+}
+
+#home-number-guesses {
+	text-align: center;
+	padding-bottom: 15px;
+	font-family: arial;
+	font-size: 25px;
+	margin-left: 660px;
+	border-style: double;
+	width: 350px;
+	height: 90px;
+	text-align: center;
+	font-weight: bold;
+	float: right;
+	position: absolute;
+	bottom: 407px;
+	top: 127px;
+}
+
+#home-letters-guessed {
+	text-align: center;
+	font-family: arial;
+	font-size: 20px;
+	margin-left: 660px;
+	border-style: double;
+	width: 350px;
+	height: 122px;
+	text-align: center;
+	font-weight: bold;
+	float: right;
+	position: absolute;
+	bottom: 295px;
+	top: 240px;
+}
+
+#home-wins {
+	text-align: center;
+	font-family: arial;
+	font-size: 20px;
+	padding-bottom: 10px;
+	margin-left: 660px;
+	border-style: double;
+	width: 350px;
+	height: 100px;
+	text-align: center;
+	font-weight: bold;
+	float: right;
+	position: absolute;
+	bottom: 208px;
+	top: 370px;
+}
+
+#home-losses {
+	text-align: center;
+	font-family: arial;
+	font-size: 20px;
+	padding-bottom: 10px;
+	margin-left: 660px;
+	border-style: double;
+	width: 350px;
+	height: 73px;
+	text-align: center;
+	font-weight: bold;
+	float: right;
+	position: absolute;
+	bottom: 120px;
+	top: 410px;
+}

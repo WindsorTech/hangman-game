@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>World Cities Hangman</title>
+ 
+ 	<script
+  	src="https://code.jquery.com/jquery-3.1.1.min.js"
+  	integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  	crossorigin="anonymous"></script>
+
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+
+<body background="assets/images/world-icons.jpg">
+
+	<div>
+	 	<h1>World Cities Hangman</h1>	
+	 	<h2>Press any key to start playing!</h2>
+	</div>
+
+	<div id="home-world-city"><p>What's the City?</p>
+	<div id="city"></div>
+	</div>
+	<br>
+	<div id="picture"></div>
+
+	<div id="home-number-guesses">	
+		<p>Wrong Guesses Left:</p>
+		<div id="guesses"></div>
+	</div>
+
+	<div id="home-letters-guessed">	
+		<p>Letters Already Guessed:</p>
+		<div id="letters-guessed"></div>
+	</div>
+
+	<div id="home-wins">	
+		<p>Wins:</p>
+		<div id="wins"></div>
+	</div>
+
+<script type="text/javascript" src="assets/javascript/game.js"></script>
+</body>
+</html>

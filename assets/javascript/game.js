@@ -18,6 +18,9 @@ var guessedLetters = [];
 // Array with all correct letters guessed by user
 var matchedLetters = [];
 
+// create a variable to store the cityInPLay word in a string
+var wordView = "";
+
 // Number of wrong guesses left
 var guessesLeft = 10;
 
@@ -84,16 +87,13 @@ function setupGame() {
 // Display random city on page with dashes to be filled in
 function displayCity () {
 
-	// create a variable to store the cityInPLay word in a string
-	var wordView = "";
-
 	// loop through the cityLetters array
 	for (var i=0; i < cityLetters.length; i++){
 
 			// if the cityLetter is in the matchedLetters array
 			if (matchedLetters.indexOf(cityLetters[i]) != -1){
 				// add the cityLetter to the wordView string
-				wordView += cityLetters[i];				
+				wordView += cityLetters[i];			
 			}else{
 				// if not, print the dashes to be filled in
 				wordView += '&nbsp;_&nbsp;';
@@ -140,8 +140,10 @@ function correctUpdate () {
 				// insert the letter into the matched letters array
 				matchedLetters.push(letterGuessed);
 
+				wordView += letterGuessed;	
+
 				// print the letter to its place on the page
-				document.querySelector('#city').innerHTML = letterGuessed;
+				document.querySelector('#city').innerHTML = wordView;
 		};
 
 	};

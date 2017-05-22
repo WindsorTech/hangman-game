@@ -94,7 +94,7 @@ function displayCity () {
 			if (matchedLetters.indexOf(cityLetters[i]) != -1){
 				// add the cityLetter to the wordView string
 				wordView += cityLetters[i];			
-			}else{
+			} else {
 				// if not, print the dashes to be filled in
 				wordView += '&nbsp;_&nbsp;';
 			}
@@ -140,16 +140,24 @@ function correctUpdate () {
 				// insert the letter into the matched letters array
 				matchedLetters.push(letterGuessed);
 
-				wordView += letterGuessed;	
+				var index = cityLetters.indexOf(letterGuessed);
 
-				// print the letter to its place on the page
-				document.querySelector('#city').innerHTML = wordView;
-		};
+				wordView += cityLetters[i];
 
-	};
-		// console log the array with all already matched letters
-		console.log(matchedLetters);
+			};
+	}
+
+	// console log the array with all already matched letters
+	console.log(matchedLetters);
+
+	console.log(index);
+
+	document.querySelector("#city").innerHTML = wordView;	
+
 }
+
+
+
 
 // call function to Setup Game
 setupGame();

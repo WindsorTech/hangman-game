@@ -130,6 +130,12 @@ function wrongUpdate () {
 		// print the already guessed letter to page
 		document.querySelector("#letters-guessed").innerHTML = guessedLetters.join(' - ').toUpperCase();
 	}
+
+	if (guessesLeft == 8) {
+
+			youLose();
+		}
+
 }
 
 // Update correct guesses
@@ -177,6 +183,16 @@ function displayUpdate () {
 		}
 
 		document.querySelector("#city").innerHTML = wordView;
+
+}
+
+function youLose() {
+
+	document.querySelector("#picture").innerHTML = "<p>YOU LOSE</p><p>Try Again</p>";
+
+	losses++;
+
+	document.querySelector("#losses").innerHTML = losses;
 
 }
 

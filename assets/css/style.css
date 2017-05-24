@@ -10,9 +10,18 @@ h2 {
 	font-size: 20px;
 }
 
-p {
+h3 {
+	margin-top: 15px;
+	margin-bottom: 15px;
 	font-family: arial;
-	font-size: 20px;
+	font-size: 26px;
+}
+
+h4 {
+	margin-top: 15px;
+	margin-bottom: 15px;
+	font-family: arial;
+	font-size: 22px;
 }
 
 #home-world-city {
@@ -33,11 +42,12 @@ p {
 #city {
 	text-transform: uppercase;
 	font-size: 36px;
+	margin-top: 30px;
 }
 
-.home-picture {
-	margin-left: 300px;
+#picture {
 	width: 350px;
+	color: red;
 	text-align: center;
 	font-weight: bold;
 	padding-bottom: 237px;
@@ -45,7 +55,6 @@ p {
 }
 
 #home-number-guesses {
-	text-align: center;
 	padding-bottom: 15px;
 	font-family: arial;
 	font-size: 25px;

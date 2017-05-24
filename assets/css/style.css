@@ -30,6 +30,11 @@ p {
 	position: relative;
 }
 
+#city {
+	text-transform: uppercase;
+	font-size: 36px;
+}
+
 .home-picture {
 	margin-left: 300px;
 	width: 350px;
@@ -72,11 +77,16 @@ p {
 	top: 240px;
 }
 
+#letters-guessed {
+	font-size: 26px;	
+}
+
 #home-score {
 	text-align: center;
 	font-family: arial;
-	font-size: 20px;
-	padding-bottom: 10px;
+	font-size: 21px;
+	padding-top: 5px;
+	padding-bottom: 5px;
 	margin-left: 660px;
 	border-style: double;
 	width: 350px;
@@ -104,4 +114,12 @@ p {
 	position: absolute;
 	bottom: 120px;
 	top: 410px;
+}
+
+#wins {
+	font-size: 24px;
+}
+
+#losses {
+	font-size: 24px;
 }

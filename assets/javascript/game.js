@@ -21,8 +21,6 @@ var matchedLetters = [];
 // create a variable to store the cityInPLay word in a string
 var wordView = "";
 
-var updateView = "";
-
 // Number of wrong guesses left
 var guessesLeft = 10;
 
@@ -34,7 +32,6 @@ var wins = 0;
 
 // Number of games the user lost
 var losses = 0;
-
 
 // Register keyboard input from user
 document.onkeyup = function(event) {
@@ -83,6 +80,12 @@ function setupGame() {
 
 	// print the Wrong Guesses Left current no. to page
 	document.querySelector('#guesses').innerHTML = guessesLeft;
+
+	// print number of wins
+	document.querySelector('#wins').innerHTML = wins;
+
+	// print number of losses
+	document.querySelector('#losses').innerHTML = losses;
 
 }
 
@@ -148,7 +151,7 @@ function correctUpdate () {
 			};
 	}
 
-	cityUpdate();
+	displayUpdate();
 	// console log the array with all already matched letters
 	console.log(matchedLetters);
 
@@ -156,7 +159,9 @@ function correctUpdate () {
 
 }
 
-function cityUpdate () {
+function displayUpdate () {
+
+			var wordView = "";
 
 			// loop through the cityLetters array
 			for (var i=0; i < cityLetters.length; i++){

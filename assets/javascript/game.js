@@ -205,7 +205,7 @@ function youWin () {
 	wins++;
 
 	// print the "YOU WIN" phrase to the page
-	document.querySelector("#news").innerHTML = "<h3>YOU WIN!</h3>";
+	document.querySelector("#news").innerHTML = "<h3><font color='blue'>YOU WIN!</font></h3>";
 
 	// print the city image to the page
 	document.querySelector('#picture').innerHTML = '<img src="assets/images/' + cityInPlay + '.jpg" width="340" height="190">';
@@ -216,6 +216,10 @@ function youWin () {
 	// print Play Again Title
 	document.querySelector("#start-play").innerHTML = "<h4>Press any key to play again!</h4>";
 
+	document.onkeyup = function(event) {
+		restartGame();
+	}
+
 }
 
 // Function to end the game when user loses 
@@ -225,13 +229,38 @@ function youLose() {
 	losses++;
 
 	// print the "YOU LOSE" phrase to the page
-	document.querySelector("#news").innerHTML = "<h3>YOU LOSE!</h3>";
+	document.querySelector("#news").innerHTML = "<h3><font color='red'>YOU LOSE!<p>TRY AGAIN</font></h3>";
 
 	// Update the Loss score on the page
 	document.querySelector("#losses").innerHTML = losses;
 
 	// print Play Again Title
 	document.querySelector("#start-play").innerHTML = "<h4>Press any key to play again!</h4>";
+
+}
+
+function restartGame() {
+
+	cityInPlay = null;
+	cityLetters = [];
+	matchedLetters = [];
+	guessedLetters = [];
+	guessesLeft = 10;
+	letterGuessed = null;
+	wins = wins;
+	losses = losses;
+
+	// call the displayCity function to move the game on
+	setupGame();
+
+	// print the Wrong Guesses Left current no. to page
+	document.querySelector('#guesses').innerHTML = guessesLeft;
+
+	// print number of wins
+	document.querySelector('#wins').innerHTML = wins;
+
+	// print number of losses
+	document.querySelector('#losses').innerHTML = losses;
 
 }
 

@@ -205,10 +205,16 @@ function youWin () {
 	wins++;
 
 	// print the "YOU WIN" phrase to the page
-	document.querySelector("#picture").innerHTML = "<h1>YOU WIN!</h1>";
+	document.querySelector("#news").innerHTML = "<h3>YOU WIN!</h3>";
+
+	// print the city image to the page
+	document.querySelector('#picture').innerHTML = '<img src="assets/images/' + cityInPlay + '.jpg" width="340" height="190">';
 
 	// Update the Wins score on the page
 	document.querySelector("#wins").innerHTML = wins;
+
+	// print Play Again Title
+	document.querySelector("#start-play").innerHTML = "<h4>Press any key to play again!</h4>";
 
 }
 
@@ -219,10 +225,13 @@ function youLose() {
 	losses++;
 
 	// print the "YOU LOSE" phrase to the page
-	document.querySelector("#picture").innerHTML = "<h1>YOU LOSE!</h1>";
+	document.querySelector("#news").innerHTML = "<h3>YOU LOSE!</h3>";
 
 	// Update the Loss score on the page
 	document.querySelector("#losses").innerHTML = losses;
+
+	// print Play Again Title
+	document.querySelector("#start-play").innerHTML = "<h4>Press any key to play again!</h4>";
 
 }
 

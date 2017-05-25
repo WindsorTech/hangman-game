@@ -241,6 +241,7 @@ function youLose() {
 
 function restartGame() {
 
+	wordView = "";
 	cityInPlay = null;
 	cityLetters = [];
 	matchedLetters = [];
@@ -250,8 +251,8 @@ function restartGame() {
 	wins = wins;
 	losses = losses;
 
-	// call the displayCity function to move the game on
-	setupGame();
+	// print the already guessed letter to page
+	document.querySelector("#letters-guessed").innerHTML = guessedLetters.join(' - ').toUpperCase();
 
 	// print the Wrong Guesses Left current no. to page
 	document.querySelector('#guesses').innerHTML = guessesLeft;
@@ -261,6 +262,15 @@ function restartGame() {
 
 	// print number of losses
 	document.querySelector('#losses').innerHTML = losses;
+
+	document.querySelector("#news").innerHTML = "";
+
+	document.querySelector('#picture').innerHTML = "";
+
+	document.querySelector("#start-play").innerHTML = "<h4>Press any letter to start playing!</h4>";
+
+	// call the displayCity function to move the game on
+	setupGame();
 
 }
 

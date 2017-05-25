@@ -24,9 +24,6 @@ var wordView = "";
 // Number of wrong guesses left
 var guessesLeft = 10;
 
-// Number of total guesses by the user
-var totalGuesses = 0;
-
 // Number of games the user won
 var wins = 0;
 
@@ -131,10 +128,13 @@ function wrongUpdate () {
 		document.querySelector("#letters-guessed").innerHTML = guessedLetters.join(' - ').toUpperCase();
 	}
 
-	if (guessesLeft == 8) {
 
+	// End game if user gets the word right (win) or runs out of guesses (loss)
+	if (guessesLeft == 0) {
 			youLose();
-		}
+	 } 	else if (matchedLetters.length == cityLetters.length) {
+			youWin();
+	}
 
 }
 
@@ -150,23 +150,34 @@ function correctUpdate () {
 			if ((letterGuessed === cityLetters[i]) && (matchedLetters.indexOf(letterGuessed) == -1)){
 
 				// insert the letter into the matched letters array
+				matchedLetters.push(letterGuessed);}
+
+				// checking if there are duplicate letters in word
+			else if ((letterGuessed === cityLetters[i + 1])) {
+
 				matchedLetters.push(letterGuessed);
-
-				var index = cityLetters.indexOf(letterGuessed);
-
 			};
 	}
 
+	// call the function to update the city display on page
 	displayUpdate();
+
 	// console log the array with all already matched letters
 	console.log(matchedLetters);
 
-	console.log(index);
+	// End game if user gets the word right (win) or runs out of guesses (loss)
+	if (guessesLeft == 0) {
+			youLose();
+	 } 	else if (matchedLetters.length == cityLetters.length) {
+			youWin();
+	}
 
 }
 
+// Update the city display on page
 function displayUpdate () {
 
+			// set the wordView to display the updates
 			var wordView = "";
 
 			// loop through the cityLetters array
@@ -182,16 +193,35 @@ function displayUpdate () {
 			}
 		}
 
+		// print the updated wordView string to the page
 		document.querySelector("#city").innerHTML = wordView;
 
 }
 
+// Function to end game when user wins
+function youWin () {
+
+	// increase the Wins score by one
+	wins++;
+
+	// print the "YOU WIN" phrase to the page
+	document.querySelector("#picture").innerHTML = "<h1>YOU WIN!</h1>";
+
+	// Update the Wins score on the page
+	document.querySelector("#wins").innerHTML = wins;
+
+}
+
+// Function to end the game when user loses 
 function youLose() {
 
-	document.querySelector("#picture").innerHTML = "<p>YOU LOSE</p><p>Try Again</p>";
-
+	// increase the Loss score by one
 	losses++;
 
+	// print the "YOU LOSE" phrase to the page
+	document.querySelector("#picture").innerHTML = "<h1>YOU LOSE!</h1>";
+
+	// Update the Loss score on the page
 	document.querySelector("#losses").innerHTML = losses;
 
 }

@@ -30,15 +30,16 @@ var wins = 0;
 // Number of games the user lost
 var losses = 0;
 
+
+// Set Up and start game
+function setupGame() {
+
 // Register keyboard input from user
 document.onkeyup = function(event) {
 
 	// register key pressed by user 
 	// and store it in the letterGuessed variable
 	letterGuessed = String.fromCharCode(event.keyCode).toLowerCase();
-
-	// console log the letter key pressed
-	console.log(letterGuessed);
 
 	// if the letter guessed by user is right
 	// and NOT already in the matched letters array
@@ -54,27 +55,14 @@ document.onkeyup = function(event) {
 	}
 
 }
-
-// Set Up game - randomly choose city and split the word letters
-function setupGame() {
-
 	// Randomly choose 1 city from the cities array 
 	// and store it in the cityInPlay variable
 	cityInPlay = cities[Math.floor(Math.random() * cities.length)];
 
-	// Console log chosen city - cityinPlay variable
-	console.log(cityInPlay);
-
 	// Split the letters from chosen city
 	// and store in in the cityLetters Array
 	cityLetters = cityInPlay.split('');
-
-	// Console log cityLetters array 
-	console.log(cityLetters);
-
-	// call the displayCity function to move the game on
-	displayCity();
-
+	
 	// print the Wrong Guesses Left current no. to page
 	document.querySelector('#guesses').innerHTML = guessesLeft;
 
@@ -83,6 +71,9 @@ function setupGame() {
 
 	// print number of losses
 	document.querySelector('#losses').innerHTML = losses;
+
+	// call the displayCity function to move the game on
+	displayCity();
 
 }
 
@@ -162,9 +153,6 @@ function correctUpdate () {
 	// call the function to update the city display on page
 	displayUpdate();
 
-	// console log the array with all already matched letters
-	console.log(matchedLetters);
-
 	// End game if user gets the word right (win) or runs out of guesses (loss)
 	if (guessesLeft == 0) {
 			youLose();
@@ -216,6 +204,7 @@ function youWin () {
 	// print Play Again Title
 	document.querySelector("#start-play").innerHTML = "<h4>Press any key to play again!</h4>";
 
+	// on a press of a button, restart the game
 	document.onkeyup = function(event) {
 		restartGame();
 	}
@@ -237,10 +226,17 @@ function youLose() {
 	// print Play Again Title
 	document.querySelector("#start-play").innerHTML = "<h4>Press any key to play again!</h4>";
 
+	// on a press of a button, restart the game
+	document.onkeyup = function(event) {
+		restartGame();
+	}
+
 }
 
+// restart the game so users can keep playing
 function restartGame() {
 
+	// reset game variables
 	wordView = "";
 	cityInPlay = null;
 	cityLetters = [];
@@ -251,27 +247,30 @@ function restartGame() {
 	wins = wins;
 	losses = losses;
 
-	// print the already guessed letter to page
+	// reset the already guessed letters section
 	document.querySelector("#letters-guessed").innerHTML = guessedLetters.join(' - ').toUpperCase();
 
-	// print the Wrong Guesses Left current no. to page
+	// reset the Wrong Guesses Left section
 	document.querySelector('#guesses').innerHTML = guessesLeft;
 
-	// print number of wins
+	// print the current number of wins
 	document.querySelector('#wins').innerHTML = wins;
 
-	// print number of losses
+	// print current number of losses
 	document.querySelector('#losses').innerHTML = losses;
 
+	// reset the News div
 	document.querySelector("#news").innerHTML = "";
 
+	// reset the Picture div
 	document.querySelector('#picture').innerHTML = "";
 
+	// print the Play Again title to page
 	document.querySelector("#start-play").innerHTML = "<h4>Press any letter to start playing!</h4>";
-
-	// call the displayCity function to move the game on
+	
+	// call function to Setup Game
 	setupGame();
-
+	
 }
 
 // call function to Setup Game

@@ -1,6 +1,6 @@
 # World Cities Hangman
 
-## Play this entertaining game and try to guess which world city the computer has chosen!
+## Are you a world traveler? Play this entertaining game and try to guess which city the computer has chosen!
 
 ## Click on the link and have fun: https://boiling-temple-67750.herokuapp.com/
 

@@ -58,7 +58,7 @@ document.onkeyup = function(event) {
 	// Randomly choose 1 city from the cities array 
 	// and store it in the cityInPlay variable
 	cityInPlay = cities[Math.floor(Math.random() * cities.length)];
-	console.log(cities.length)
+	
 	// Split the letters from chosen city
 	// and store in in the cityLetters Array
 	cityLetters = cityInPlay.split('');

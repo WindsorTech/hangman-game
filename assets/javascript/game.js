@@ -1,7 +1,7 @@
 // Global Variables
 
 // Array with all possible cities to be chosen
-var cities = ["beijing", "london", "moscow", "orlando", "paris", "rome", "sydney", "tokyo"];
+var cities = ["beijing", "london", "moscow", "orlando", "paris", "rome", "sydney", "tokyo", "amsterdam", "athens", "barcelona", "berlin", "brasilia", "chicago", "dublin", "havana", "hiroshima", "istanbul", "liverpool", "madrid", "miami", "montreal", "prague", "seoul", "windsor"];
 
 // Variable to store the chosen city to be played in each round
 var cityInPlay = null;
@@ -58,7 +58,7 @@ document.onkeyup = function(event) {
 	// Randomly choose 1 city from the cities array 
 	// and store it in the cityInPlay variable
 	cityInPlay = cities[Math.floor(Math.random() * cities.length)];
-
+	console.log(cities.length)
 	// Split the letters from chosen city
 	// and store in in the cityLetters Array
 	cityLetters = cityInPlay.split('');
